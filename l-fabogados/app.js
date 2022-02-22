@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose=require('mongoose')
+
+//import models database
+const solicitudes=require('./models/solicitud')
+//database connection
+const url = 'mongodb://localhost:27017/lfabogados';
+const connect = mongoose.connect(url).then(console.log("hola base de datos"));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
