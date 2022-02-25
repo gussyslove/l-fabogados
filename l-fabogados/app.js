@@ -9,7 +9,10 @@ const mongoose=require('mongoose')
 const solicitudes=require('./models/solicitud')
 //database connection
 const url = 'mongodb://localhost:27017/lfabogados';
-const connect = mongoose.connect(url).then(console.log("hola base de datos"));
+const connect = mongoose.connect(url)
+connect.then((db) => {
+  console.log("Connected correctly to server");
+}, (err) => { console.log(err); });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

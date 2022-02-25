@@ -19,7 +19,10 @@ const personaSchema=new Schema({
     }
 })
 const solicitudSchema=new Schema({
-    persona:{personaSchema}
+    persona: {
+        type:personaSchema,
+        required:true
+    }
     ,description:{
         type:String,
         required:true
